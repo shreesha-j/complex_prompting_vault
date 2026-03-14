@@ -12,6 +12,7 @@ This vault now contains a curated copy of the prompt files you created across `D
 
 - `documentation-generation/`: Prompts that turn transcripts, codebases, or broad topics into large documentation sets. (4 folders)
 - `fac-form-generation/`: Prompts used by the FAC generation flow to load context, map requirements, and generate code. (3 folders)
+- `repository-curation/`: Prompts that standardize note, context, and prompt repositories into curated libraries with manifests, navigation docs, and migration records. (1 folder)
 - `workflow-orchestration/`: Prompts that control chat handoff, context loading, checkpointing, and resumable work. (3 folders)
 
 ## Why this structure exists
@@ -24,11 +25,13 @@ You asked for all of your prompt files to live in this repo, but also to be sepa
 ## Current scope
 
 - Imported raw files: 12
-- Curated prompt folders: 10
+- Vault-authored prompt files: 1
+- Curated prompt folders: 11
 - Source roots scanned: `Documents/Work`, `Documents/obsidian_vault`, `Documents/Synthing/obsidian_vault`
 
 ## Notes
 
 - Source files were copied, not moved.
+- Vault-authored prompts are stored directly in `prompt_library/` and documented in the manifest as generated inside the vault.
 - Exact duplicate prompt files are documented in `catalog/README.md`.
 - Each prompt folder includes its own `README.md` describing why it exists and what it contains.

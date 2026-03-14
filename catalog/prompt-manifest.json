@@ -16,7 +16,7 @@
     }
   ],
   "raw_import_count": 12,
-  "curated_group_count": 10,
+  "curated_group_count": 11,
   "categories": [
     {
       "slug": "documentation-generation",
@@ -29,6 +29,12 @@
       "title": "FAC Form Generation",
       "description": "Prompts used by the FAC generation flow to load context, map requirements, and generate code.",
       "group_count": 3
+    },
+    {
+      "slug": "repository-curation",
+      "title": "Repository Curation",
+      "description": "Prompts that standardize note, context, and prompt repositories into curated libraries with manifests, navigation docs, and migration records.",
+      "group_count": 1
     },
     {
       "slug": "workflow-orchestration",
@@ -243,6 +249,44 @@
           "size_bytes": 15252
         }
       ]
+    },
+    {
+      "slug": "multi-repository-knowledge-workspace-standardizer",
+      "title": "Multi-Repository Knowledge Workspace Standardizer",
+      "category": "repository-curation",
+      "library_path": "prompt_library/repository-curation/multi-repository-knowledge-workspace-standardizer",
+      "why": "Captures the full workflow used to reorganize the Notes, Context-Database_Handler, and complex_prompting_vault repositories so the same standards can be reused later.",
+      "contains": "A master prompt plus reusable instruction templates for curating note, context, and prompt repositories with README/index coverage, manifests, migration maps, commit codes, and workspace-level indexing.",
+      "notes": "These files were authored directly inside the vault during the Jess/Git repository standardization work. The template leaves target-repo placeholders unfilled because Project-listing_handler was not discoverable from the current workspace search.",
+      "files": [
+        {
+          "label": "Vault-authored master prompt",
+          "file_name": "prompt.md",
+          "source_path": "/Users/sreeshaj/Documents/Work/temp/Local_project/Jess/Git/complex_prompting_vault/prompt_library/repository-curation/multi-repository-knowledge-workspace-standardizer/prompt.md",
+          "raw_copy": null,
+          "origin": "generated-in-vault",
+          "sha256": "74f0ade5914740665faa6d3a5adb66b072fb01e232706f383f858f045c5023b4",
+          "size_bytes": 4281
+        },
+        {
+          "label": "Full reusable instruction template",
+          "file_name": "template-instruction.md",
+          "source_path": "/Users/sreeshaj/Documents/Work/temp/Local_project/Jess/Git/complex_prompting_vault/prompt_library/repository-curation/multi-repository-knowledge-workspace-standardizer/template-instruction.md",
+          "raw_copy": null,
+          "origin": "generated-in-vault",
+          "sha256": "5170fc5598cd91f9d7a10b8e05b8523254c1d2041c3e6ea5c428764a6a625dac",
+          "size_bytes": 9607
+        },
+        {
+          "label": "Quick reusable instruction template",
+          "file_name": "quick-template-instruction.md",
+          "source_path": "/Users/sreeshaj/Documents/Work/temp/Local_project/Jess/Git/complex_prompting_vault/prompt_library/repository-curation/multi-repository-knowledge-workspace-standardizer/quick-template-instruction.md",
+          "raw_copy": null,
+          "origin": "generated-in-vault",
+          "sha256": "7377ca8c8631e636811f70e3ac508bec0a057ad7bc5dac9b9dde7e4b92207991",
+          "size_bytes": 3426
+        }
+      ]
     }
   ],
   "duplicate_hash_groups": [
@@ -263,5 +307,6 @@
         }
       ]
     }
-  ]
+  ],
+  "vault_authored_prompt_count": 1
 }

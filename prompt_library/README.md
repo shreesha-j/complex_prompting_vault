@@ -8,3 +8,10 @@ Each prompt concept gets its own isolated folder with:
 - source provenance back to the original location on disk
 
 Use this folder when you want meaning-first navigation instead of the raw original paths.
+
+## Categories
+
+- `documentation-generation/`
+- `fac-form-generation/`
+- `repository-curation/`
+- `workflow-orchestration/`

@@ -5,8 +5,9 @@ This folder contains indexes for the imported prompt vault.
 ## Summary
 
 - Raw imported prompt files: 12
-- Curated prompt concept folders: 10
-- Categories: 3
+- Vault-authored prompt files: 1
+- Curated prompt concept folders: 11
+- Categories: 4
 
 ## Exact duplicate groups
 

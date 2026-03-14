@@ -1,0 +1,267 @@
+{
+  "generated_on": "2026-03-14",
+  "target_vault": "/Users/sreeshaj/Documents/Work/temp/Local_project/Jess/Git/complex_prompting_vault",
+  "source_roots": [
+    {
+      "path": "/Users/sreeshaj/Documents/Work",
+      "label": "documents-work"
+    },
+    {
+      "path": "/Users/sreeshaj/Documents/obsidian_vault",
+      "label": "documents-obsidian-vault"
+    },
+    {
+      "path": "/Users/sreeshaj/Documents/Synthing/obsidian_vault",
+      "label": "documents-synthing-obsidian-vault"
+    }
+  ],
+  "raw_import_count": 12,
+  "curated_group_count": 10,
+  "categories": [
+    {
+      "slug": "documentation-generation",
+      "title": "Documentation Generation",
+      "description": "Prompts that turn transcripts, codebases, or broad topics into large documentation sets.",
+      "group_count": 4
+    },
+    {
+      "slug": "fac-form-generation",
+      "title": "FAC Form Generation",
+      "description": "Prompts used by the FAC generation flow to load context, map requirements, and generate code.",
+      "group_count": 3
+    },
+    {
+      "slug": "workflow-orchestration",
+      "title": "Workflow Orchestration",
+      "description": "Prompts that control chat handoff, context loading, checkpointing, and resumable work.",
+      "group_count": 3
+    }
+  ],
+  "concepts": [
+    {
+      "slug": "universal-transcription-documentation-pipeline",
+      "title": "Universal Transcription Documentation Pipeline",
+      "category": "documentation-generation",
+      "library_path": "prompt_library/documentation-generation/universal-transcription-documentation-pipeline",
+      "why": "Keeps the transcript-to-documentation prompt together in one place because you have multiple copies/variants of the same workflow.",
+      "contains": "Markdown prompt variants for converting transcript files into production-grade technical documentation with deep explanations, diagrams, and multi-language examples.",
+      "notes": "The two files are near-duplicate variants of the same documentation pipeline prompt.",
+      "files": [
+        {
+          "label": "Lyik core variant",
+          "file_name": "prompt-lyik-core.md",
+          "source_path": "/Users/sreeshaj/Documents/Work/Lyik_core/iifl_plugin/lyik_iifl/iifl_plugins/src/lyik/iifl/prompt.md",
+          "raw_copy": "imports/raw/documents-work/Lyik_core/iifl_plugin/lyik_iifl/iifl_plugins/src/lyik/iifl/prompt.md",
+          "sha256": "7bf77782f23b10e42c879c8a9fd5f2eb9251acbc9506487549df122d66c2f688",
+          "size_bytes": 11230
+        },
+        {
+          "label": "Transcript fetcher output variant",
+          "file_name": "prompt-youtube-output.md",
+          "source_path": "/Users/sreeshaj/Documents/Work/temp/Local_project/scripts/youtube_transcript_fetcher/output/prompt.md",
+          "raw_copy": "imports/raw/documents-work/temp/Local_project/scripts/youtube_transcript_fetcher/output/prompt.md",
+          "sha256": "d7ec78f83de63285bf221b2f96e150bca51d647c7277f8120415198331982dd9",
+          "size_bytes": 11228
+        }
+      ]
+    },
+    {
+      "slug": "kiro-documentation-generator-archive",
+      "title": "Kiro Documentation Generator Archive Note",
+      "category": "documentation-generation",
+      "library_path": "prompt_library/documentation-generation/kiro-documentation-generator-archive",
+      "why": "Preserves the richer archived note that wraps a master prompt with frontmatter, rationale, and working context.",
+      "contains": "An Obsidian note that embeds a copy-paste-ready Kiro documentation generator prompt plus framing around how to use it.",
+      "notes": "This is the archived note form, not the cleaner extracted master prompt.",
+      "files": [
+        {
+          "label": "Archived Obsidian note",
+          "file_name": "Prompt Generation.md",
+          "source_path": "/Users/sreeshaj/Documents/obsidian_vault/Fac/GPT ARchive/Prompt Generation.md",
+          "raw_copy": "imports/raw/documents-obsidian-vault/Fac/GPT ARchive/Prompt Generation.md",
+          "sha256": "2d56b055810a3a68be2e4817f9fd2aadca136e4c0360a38998990c53930e4816",
+          "size_bytes": 25812
+        }
+      ]
+    },
+    {
+      "slug": "kiro-documentation-generator-master",
+      "title": "Kiro Documentation Generator Master Prompt",
+      "category": "documentation-generation",
+      "library_path": "prompt_library/documentation-generation/kiro-documentation-generator-master",
+      "why": "Keeps the cleaner master-prompt version separate from the archived note so you can reuse it directly.",
+      "contains": "A copy-paste-ready master prompt for generating large documentation collections from transcripts using the Kiro methodology.",
+      "notes": "This is the streamlined working copy stored under the NodeJs area of your Obsidian vault.",
+      "files": [
+        {
+          "label": "NodeJs vault copy",
+          "file_name": "master_prompt.md",
+          "source_path": "/Users/sreeshaj/Documents/obsidian_vault/Fac/NodeJs/master_prompt.md",
+          "raw_copy": "imports/raw/documents-obsidian-vault/Fac/NodeJs/master_prompt.md",
+          "sha256": "4d9cf231b68306510bf6d1e1ccd07a9657a2ec784b5592f90388be32288de4d2",
+          "size_bytes": 15670
+        }
+      ]
+    },
+    {
+      "slug": "kiro-comprehensive-documentation-template",
+      "title": "Kiro Comprehensive Documentation Template",
+      "category": "documentation-generation",
+      "library_path": "prompt_library/documentation-generation/kiro-comprehensive-documentation-template",
+      "why": "Groups the general-purpose exhaustive documentation template and keeps both copies together because they are the same prompt stored in different vaults.",
+      "contains": "General Kiro documentation template files focused on exhaustive long-form technical documentation creation.",
+      "notes": "These two files are exact duplicates with identical content hashes.",
+      "files": [
+        {
+          "label": "Primary Obsidian vault copy",
+          "file_name": "kiro_prompt_(gen best documentation).md",
+          "source_path": "/Users/sreeshaj/Documents/obsidian_vault/Fac/Prompt_list/kiro_prompt_(gen best documentation).md",
+          "raw_copy": "imports/raw/documents-obsidian-vault/Fac/Prompt_list/kiro_prompt_(gen best documentation).md",
+          "sha256": "607bd9415e772a1b580757c39bc164da685516ad45feaa8ddb1e47b3c3bf5219",
+          "size_bytes": 8602
+        },
+        {
+          "label": "Synthing vault copy",
+          "file_name": "kiro_prompt.md",
+          "source_path": "/Users/sreeshaj/Documents/Synthing/obsidian_vault/Fac/kiro_prompt.md",
+          "raw_copy": "imports/raw/documents-synthing-obsidian-vault/Fac/kiro_prompt.md",
+          "sha256": "607bd9415e772a1b580757c39bc164da685516ad45feaa8ddb1e47b3c3bf5219",
+          "size_bytes": 8602
+        }
+      ]
+    },
+    {
+      "slug": "fac-context-loader",
+      "title": "FAC Context Loader",
+      "category": "fac-form-generation",
+      "library_path": "prompt_library/fac-form-generation/fac-context-loader",
+      "why": "Separates the first-stage FAC context prompt from the downstream prompts because it serves as the bootstrap for the rest of the FAC generation chain.",
+      "contains": "The prompt that loads FAC framework knowledge and establishes the system role before requirement analysis or code generation.",
+      "notes": "This is the Level 1 prompt in the FAC generation pipeline.",
+      "files": [
+        {
+          "label": "FAC context prompt",
+          "file_name": "context_prompt.txt",
+          "source_path": "/Users/sreeshaj/Documents/Work/lyik_meta/fac_generator/llm/prompts/context_prompt.txt",
+          "raw_copy": "imports/raw/documents-work/lyik_meta/fac_generator/llm/prompts/context_prompt.txt",
+          "sha256": "6a55d64965931269709a11af08fd98897597c75d7d5c355f8a63640b912d2ebd",
+          "size_bytes": 2684
+        }
+      ]
+    },
+    {
+      "slug": "fac-mapping-generator",
+      "title": "FAC Mapping Generator",
+      "category": "fac-form-generation",
+      "library_path": "prompt_library/fac-form-generation/fac-mapping-generator",
+      "why": "Keeps the requirement-to-JSON mapping prompt isolated because it is a distinct stage with a different output contract.",
+      "contains": "The prompt that converts natural language form requirements into a structured JSON mapping/specification.",
+      "notes": "This is the Level 2 prompt in the FAC generation pipeline.",
+      "files": [
+        {
+          "label": "FAC mapping prompt",
+          "file_name": "mapping_prompt.txt",
+          "source_path": "/Users/sreeshaj/Documents/Work/lyik_meta/fac_generator/llm/prompts/mapping_prompt.txt",
+          "raw_copy": "imports/raw/documents-work/lyik_meta/fac_generator/llm/prompts/mapping_prompt.txt",
+          "sha256": "30c1b8f052449155cec2669e07ffb36469fdec460de30660eb88792d386c2061",
+          "size_bytes": 5654
+        }
+      ]
+    },
+    {
+      "slug": "fac-code-generator",
+      "title": "FAC Code Generator",
+      "category": "fac-form-generation",
+      "library_path": "prompt_library/fac-form-generation/fac-code-generator",
+      "why": "Keeps the final code-generation prompt separate because it is responsible for producing runnable FAC code from the structured spec.",
+      "contains": "The prompt that turns the structured FAC form specification into production-ready Python code.",
+      "notes": "This is the Level 3 prompt in the FAC generation pipeline.",
+      "files": [
+        {
+          "label": "FAC code generation prompt",
+          "file_name": "generation_prompt.txt",
+          "source_path": "/Users/sreeshaj/Documents/Work/lyik_meta/fac_generator/llm/prompts/generation_prompt.txt",
+          "raw_copy": "imports/raw/documents-work/lyik_meta/fac_generator/llm/prompts/generation_prompt.txt",
+          "sha256": "5c72aad23519479cb9e6bf1e6f3876d2c08251ace80283c7533a20e4a5d97716",
+          "size_bytes": 6611
+        }
+      ]
+    },
+    {
+      "slug": "resume-documentation-work",
+      "title": "Resume Documentation Work",
+      "category": "workflow-orchestration",
+      "library_path": "prompt_library/workflow-orchestration/resume-documentation-work",
+      "why": "Keeps the resume-chat bootstrap prompt isolated because it is specifically designed to restart a long documentation run safely.",
+      "contains": "A restart prompt for continuing `lyik_deployment_templates` documentation work, including progress checks and startup steps.",
+      "notes": "This prompt is tuned for resumable documentation runs in Kiro.",
+      "files": [
+        {
+          "label": "Resume prompt",
+          "file_name": "PROMPT.md",
+          "source_path": "/Users/sreeshaj/Documents/Work/lyik_meta/order_fac/lyik_deployment_templates/main_context_handler/PROMPT.md",
+          "raw_copy": "imports/raw/documents-work/lyik_meta/order_fac/lyik_deployment_templates/main_context_handler/PROMPT.md",
+          "sha256": "c29ca15dc252867044f19899aa575283d647616999279264ffe0c795499d0071",
+          "size_bytes": 8797
+        }
+      ]
+    },
+    {
+      "slug": "context-ingestion-change-plan",
+      "title": "Context Ingestion Change Plan",
+      "category": "workflow-orchestration",
+      "library_path": "prompt_library/workflow-orchestration/context-ingestion-change-plan",
+      "why": "Keeps the context-then-instruction workflow prompt separate because it governs how a chat should process large context dumps before making changes.",
+      "contains": "A staged workflow prompt that waits for `STOP-IT`, summarizes context, and only then moves into actual implementation planning.",
+      "notes": "Useful when you want the model to absorb context first and avoid premature edits.",
+      "files": [
+        {
+          "label": "Obsidian context workflow prompt",
+          "file_name": "Context Prompt.md",
+          "source_path": "/Users/sreeshaj/Documents/obsidian_vault/Fac/Prompt_list/Context Prompt.md",
+          "raw_copy": "imports/raw/documents-obsidian-vault/Fac/Prompt_list/Context Prompt.md",
+          "sha256": "e8dea930356bfdfdbb49418b5905df1b8479605f33e620b2e924b1d47f30bf7f",
+          "size_bytes": 4834
+        }
+      ]
+    },
+    {
+      "slug": "multi-chat-server-documentation-orchestrator",
+      "title": "Multi-Chat Server Documentation Orchestrator",
+      "category": "workflow-orchestration",
+      "library_path": "prompt_library/workflow-orchestration/multi-chat-server-documentation-orchestrator",
+      "why": "Keeps the large resumable server-documentation orchestration prompt isolated because it defines state persistence, checkpoints, and per-chat limits.",
+      "contains": "A multi-chat orchestration prompt for documenting a large server codebase while persisting progress across limited Kiro chats.",
+      "notes": "This is the heavier orchestration prompt focused on summaries, status folders, and resumable runs.",
+      "files": [
+        {
+          "label": "Server documentation orchestrator prompt",
+          "file_name": "Kero Prompt (gen server Documentation).md",
+          "source_path": "/Users/sreeshaj/Documents/obsidian_vault/Fac/Prompt_list/Kero Prompt (gen server Documentation).md",
+          "raw_copy": "imports/raw/documents-obsidian-vault/Fac/Prompt_list/Kero Prompt (gen server Documentation).md",
+          "sha256": "eaf7fbef72aca1555402fbfda6bf265b209aeac59536799991c13b8f80187951",
+          "size_bytes": 15252
+        }
+      ]
+    }
+  ],
+  "duplicate_hash_groups": [
+    {
+      "sha256": "607bd9415e772a1b580757c39bc164da685516ad45feaa8ddb1e47b3c3bf5219",
+      "files": [
+        {
+          "source_path": "/Users/sreeshaj/Documents/obsidian_vault/Fac/Prompt_list/kiro_prompt_(gen best documentation).md",
+          "raw_copy": "imports/raw/documents-obsidian-vault/Fac/Prompt_list/kiro_prompt_(gen best documentation).md",
+          "sha256": "607bd9415e772a1b580757c39bc164da685516ad45feaa8ddb1e47b3c3bf5219",
+          "size_bytes": 8602
+        },
+        {
+          "source_path": "/Users/sreeshaj/Documents/Synthing/obsidian_vault/Fac/kiro_prompt.md",
+          "raw_copy": "imports/raw/documents-synthing-obsidian-vault/Fac/kiro_prompt.md",
+          "sha256": "607bd9415e772a1b580757c39bc164da685516ad45feaa8ddb1e47b3c3bf5219",
+          "size_bytes": 8602
+        }
+      ]
+    }
+  ]
+}

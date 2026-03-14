@@ -1,0 +1,189 @@
+# Level 2: Mapping Generation Prompt
+# ====================================
+# This prompt is used in Level 2 of the generation process to analyze
+# requirements and generate structured form mappings.
+#
+# Purpose:
+# - Analyze natural language requirements
+# - Generate structured JSON form specifications
+# - Identify form components (infopanes, cards, fields)
+# - Define validation rules and LOVs
+#
+# Usage:
+# This prompt is sent to the LLM along with the requirement and FAC context.
+
+You are analyzing a form requirement and generating a structured mapping for FAC form generation.
+
+## Task
+
+Convert the following natural language requirement into a structured JSON specification that can be used to generate FAC form code.
+
+## Requirement
+
+{requirement}
+
+## Output Format
+
+Generate a JSON object with the following structure:
+
+```json
+{{
+  "form_name": "snake_case_form_name",
+  "form_title": "Human Readable Form Title",
+  "description": "Brief description of the form purpose",
+  "infopanes": [
+    {{
+      "name": "infopane_name",
+      "title": "InfoPane Title",
+      "operation": "create",
+      "description": "InfoPane description",
+      "cards": [
+        {{
+          "name": "card_name",
+          "title": "Card Title",
+          "description": "Card description",
+          "fields": [
+            {{
+              "name": "field_name",
+              "title": "Field Label",
+              "field_type": "CoreField or FIELD.Email or FIELD.Date etc",
+              "display_type": "textbox|dropdown|date|file|radio|checkbox|textarea",
+              "mandatory": true|false,
+              "readonly": false,
+              "hidden": false,
+              "default_value": null,
+              "placeholder": "Placeholder text",
+              "help_text": "Help text for user",
+              "max_length": null,
+              "min_length": null,
+              "max_value": null,
+              "min_value": null,
+              "pattern": null,
+              "lov_name": null,
+              "col_span": 1,
+              "validation_rules": []
+            }}
+          ]
+        }}
+      ]
+    }}
+  ],
+  "lovs": [
+    {{
+      "name": "lov_name",
+      "options": ["Option1", "Option2", "Option3"],
+      "description": "Description of what this LOV is for"
+    }}
+  ]
+}}
+```
+
+## Guidelines
+
+### Form Structure
+1. **form_name**: Use snake_case, descriptive, typically ends with _form
+2. **form_title**: Human-readable title in Title Case
+3. **description**: Brief explanation of form purpose
+
+### InfoPanes
+- Group related sections of the form
+- Each major section should be an InfoPane
+- Use descriptive names (e.g., personal_info, contact_details, documents)
+- Set operation to "create" for new forms
+
+### Cards
+- Group related fields within an InfoPane
+- Each logical grouping should be a Card
+- Use descriptive names and titles
+- Keep cards focused on a single topic
+
+### Fields
+- **name**: snake_case, descriptive (e.g., first_name, email_address, pan_number)
+- **title**: Human-readable label (e.g., "First Name", "Email Address", "PAN Number")
+- **field_type**: Choose appropriate type:
+  - `CoreField`: Generic field with custom display_type
+  - `FIELD.Email`: Email field with validation
+  - `FIELD.Phone`: Phone number field
+  - `FIELD.Date`: Date picker field
+  - `FIELD.FILE`: File upload field
+  - `FIELD.PAN`: PAN number field
+  - `FIELD.AADHAAR`: Aadhaar number field
+- **display_type**: UI component type:
+  - `textbox`: Single-line text input
+  - `textarea`: Multi-line text input
+  - `dropdown`: Dropdown select (requires lov_name)
+  - `radio`: Radio buttons (requires lov_name)
+  - `checkbox`: Checkbox
+  - `date`: Date picker
+  - `file`: File upload
+- **mandatory**: Set to true for required fields
+- **validation_rules**: Add specific validation requirements
+- **lov_name**: Reference to LOV for dropdown/radio fields
+
+### LOVs (List of Values)
+- Create LOVs for all dropdown and radio fields
+- Use descriptive names ending with _lov (e.g., gender_lov, country_lov)
+- Provide complete list of options
+- Add description explaining the LOV purpose
+
+### Validation
+- Mark required fields with mandatory=true
+- Add max_length/min_length for text fields
+- Add pattern for regex validation (e.g., email, phone formats)
+- Use appropriate field types that include built-in validation
+
+### Organization
+- Organize fields logically by topic
+- Group personal info together
+- Group contact info together
+- Group document fields together
+- Consider user flow and experience
+
+## Important Rules
+
+1. Generate ONLY the JSON object, no additional explanatory text
+2. Ensure valid JSON syntax (proper quotes, commas, brackets)
+3. Include all required fields in the structure
+4. Use null for optional empty values
+5. Be specific and complete - don't leave placeholders
+6. If requirement is ambiguous, make reasonable assumptions
+7. Follow FAC naming conventions strictly
+
+## Examples of Good Field Definitions
+
+```json
+{{
+  "name": "email_address",
+  "title": "Email Address",
+  "field_type": "FIELD.Email",
+  "display_type": "textbox",
+  "mandatory": true,
+  "placeholder": "user@example.com",
+  "help_text": "Enter your email address for notifications"
+}}
+```
+
+```json
+{{
+  "name": "country",
+  "title": "Country",
+  "field_type": "CoreField",
+  "display_type": "dropdown",
+  "mandatory": true,
+  "lov_name": "country_lov",
+  "help_text": "Select your country of residence"
+}}
+```
+
+```json
+{{
+  "name": "date_of_birth",
+  "title": "Date of Birth",
+  "field_type": "FIELD.Date",
+  "display_type": "date",
+  "mandatory": true,
+  "help_text": "Select your date of birth"
+}}
+```
+
+Now generate the complete JSON mapping for the requirement above.

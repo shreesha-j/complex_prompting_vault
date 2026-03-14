@@ -1,0 +1,254 @@
+# Level 3: Code Generation Prompt
+# =================================
+# This prompt is used in Level 3 of the generation process to generate
+# actual FAC Python code from structured specifications.
+#
+# Purpose:
+# - Generate complete, production-ready FAC form code
+# - Convert structured specifications to Python code
+# - Include all necessary imports, classes, and functions
+# - Follow FAC framework conventions and best practices
+#
+# Usage:
+# This prompt is sent to the LLM along with the form specification and FAC context.
+
+You are generating production-ready FAC (Form Application Code) based on a structured specification.
+
+## Form Specification
+
+{form_spec_json}
+
+## Task
+
+Generate complete, runnable Python code for this FAC form. The code must be production-ready and follow all FAC framework conventions.
+
+## Required Components
+
+Your generated code must include:
+
+1. **Import Statements**
+   - Import all necessary FAC framework components
+   - Import any required Python standard library modules
+   - Organize imports properly (standard library, then FAC framework)
+
+2. **LOV Definitions** (if the form has LOVs)
+   - Create `get_form_lovs()` function
+   - Return dictionary mapping LOV names to option lists
+   - Include all LOVs specified in the specification
+
+3. **Form Class**
+   - Inherit from appropriate base class
+   - Implement `__init__()` method
+   - Implement `self_field()` method with all form components
+
+4. **InfoPane Definitions**
+   - Create InfoPane objects for each section
+   - Set proper titles and operations
+   - Add cards to each InfoPane
+
+5. **Card Definitions**
+   - Create Card objects for field groupings
+   - Set proper titles
+   - Add fields to each Card
+
+6. **Field Definitions**
+   - Use correct field types (CoreField, FIELD.Email, FIELD.Date, etc.)
+   - Set all required properties (title, mandatory, display_type, etc.)
+   - Implement validation rules
+   - Reference LOVs correctly for dropdown fields
+
+7. **Comments**
+   - Add docstring for the form class
+   - Add comments explaining complex logic
+   - Document field purposes where helpful
+
+## Code Structure Template
+
+```python
+"""
+{Form Title}
+{Description}
+"""
+
+# Standard library imports
+from typing import Dict, List, Any
+
+# FAC framework imports
+from fac_cli.framework import (
+    BaseForm,
+    InfoPane,
+    Card,
+    CoreField,
+    FIELD
+)
+
+# LOV definitions
+def get_form_lovs() -> Dict[str, List[str]]:
+    """
+    Get List of Values (LOVs) for form dropdowns.
+    
+    Returns:
+        Dictionary mapping LOV names to option lists
+    """
+    return {
+        'lov_name': ['Option1', 'Option2', 'Option3'],
+        # Add all LOVs here
+    }
+
+
+class {FormClassName}(BaseForm):
+    """
+    {Form Title}
+    
+    {Description}
+    """
+    
+    def __init__(self):
+        """Initialize the form."""
+        super().__init__()
+        self.form_name = "{form_name}"
+        self.form_title = "{form_title}"
+    
+    def self_field(self):
+        """
+        Define form structure with InfoPanes, Cards, and Fields.
+        """
+        # InfoPane 1
+        infopane1 = InfoPane(
+            name="{infopane_name}",
+            title="{InfoPane Title}",
+            operation="create"
+        )
+        
+        # Card 1
+        card1 = Card(
+            name="{card_name}",
+            title="{Card Title}"
+        )
+        
+        # Fields
+        field1 = CoreField(
+            name="{field_name}",
+            title="{Field Title}",
+            display_type="textbox",
+            mandatory=True
+        )
+        
+        # Add fields to card
+        card1.add_field(field1)
+        
+        # Add card to infopane
+        infopane1.add_card(card1)
+        
+        # Add infopane to form
+        self.add_infopane(infopane1)
+```
+
+## Field Type Guidelines
+
+Choose the appropriate field type for each field:
+
+- **CoreField**: Generic field with custom display_type
+  - Use for: text inputs, textareas, custom fields
+  - Set display_type: "textbox", "textarea", "dropdown", "radio", "checkbox"
+  
+- **FIELD.Email**: Email field with built-in validation
+  - Use for: email addresses
+  - Automatically validates email format
+  
+- **FIELD.Phone**: Phone number field
+  - Use for: phone numbers
+  - Validates phone number format
+  
+- **FIELD.Date**: Date picker field
+  - Use for: dates (DOB, expiry dates, etc.)
+  - Provides date picker UI
+  
+- **FIELD.FILE**: File upload field
+  - Use for: document uploads
+  - Handles file upload functionality
+  
+- **FIELD.PAN**: PAN number field
+  - Use for: PAN card numbers
+  - Validates PAN format
+  
+- **FIELD.AADHAAR**: Aadhaar number field
+  - Use for: Aadhaar card numbers
+  - Validates Aadhaar format
+
+## Validation Guidelines
+
+Implement validation correctly:
+
+1. **Mandatory Fields**: Set `mandatory=True`
+2. **Length Constraints**: Set `max_length` and `min_length`
+3. **Pattern Validation**: Set `pattern` for regex validation
+4. **Conditional Logic**: Use lambda functions for dynamic behavior
+5. **LOV References**: Set `lov_name` for dropdown/radio fields
+
+## Example Field Definitions
+
+```python
+# Text input field
+name_field = CoreField(
+    name="full_name",
+    title="Full Name",
+    display_type="textbox",
+    mandatory=True,
+    max_length=100,
+    placeholder="Enter your full name"
+)
+
+# Email field
+email_field = FIELD.Email(
+    name="email_address",
+    title="Email Address",
+    mandatory=True,
+    placeholder="user@example.com"
+)
+
+# Dropdown field with LOV
+country_field = CoreField(
+    name="country",
+    title="Country",
+    display_type="dropdown",
+    mandatory=True,
+    lov_name="country_lov"
+)
+
+# Date field
+dob_field = FIELD.Date(
+    name="date_of_birth",
+    title="Date of Birth",
+    mandatory=True
+)
+
+# File upload field
+document_field = FIELD.FILE(
+    name="id_document",
+    title="ID Document",
+    mandatory=True
+)
+```
+
+## Important Rules
+
+1. **Complete Code**: Generate complete, runnable code - no placeholders or TODOs
+2. **Valid Syntax**: Ensure all Python syntax is correct
+3. **Proper Imports**: Include all necessary imports
+4. **Follow Spec**: Implement exactly what's in the specification
+5. **FAC Conventions**: Follow FAC naming and structure conventions
+6. **PEP 8**: Follow Python style guidelines
+7. **Comments**: Add helpful comments but don't over-comment
+8. **Production Ready**: Code should be ready to use in production
+
+## Output Format
+
+Generate ONLY the Python code. Do not include:
+- Explanatory text before or after the code
+- Multiple code variations
+- Incomplete code snippets
+
+Start with imports and end with the complete form class definition.
+
+Generate the complete FAC form code now:
